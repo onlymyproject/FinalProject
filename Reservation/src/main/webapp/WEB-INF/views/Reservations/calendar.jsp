@@ -5,16 +5,53 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
-<link type="text/css"
-	href="<%=request.getContextPath() %>/resources/bootstrap/css/bootstrap.css"
-	rel="stylesheet" />
-<link type="text/css"
-	href="<%=request.getContextPath() %>/resources/dist/css/bootstrap.min.css"
-	rel="stylesheet" />
+<link type="text/css" href="<%=request.getContextPath() %>/resources/bootstrap/css/bootstrap.css" rel="stylesheet" />
+<link type="text/css" href="<%=request.getContextPath() %>/resources/dist/css/bootstrap.min.css" rel="stylesheet" />
 
 
 
 <title>Insert title here</title>
+
+<link href='/fullcalendar-1.6.4/fullcalendar/fullcalendar.css' rel='stylesheet' />
+<link href='/fullcalendar-1.6.4/fullcalendar/fullcalendar.print.css' rel='stylesheet' media='print' />
+<script src='/fullcalendar-1.6.4/lib/jquery.min.js'></script>
+<script src='/fullcalendar-1.6.4/lib/jquery-ui.custom.min.js'></script>
+<script src='/fullcalendar-1.6.4/fullcalendar/fullcalendar.min.js'></script>
+<script>
+	$(document).ready(function() {
+	
+		var date = new Date();
+		var d = date.getDate();
+		var m = date.getMonth();
+		var y = date.getFullYear();
+		
+		$('#calendar').fullCalendar({
+			header: {
+				left: 'prev,next today',
+				center: 'title',
+				right: 'month,basicWeek,basicDay'
+			},
+			editable: true,
+			
+		});
+		
+	});
+
+</script>
+<style>
+	body {
+		margin-top: 40px;
+		font-size: 14px;
+		font-family: "Lucida Grande",Helvetica,Arial,Verdana,sans-serif;
+		}
+
+	#calendar {
+		width: 900px;
+		margin: 0 auto;
+		border-color: red;
+		}
+
+</style>
 </head>
 <body>
 
@@ -31,9 +68,6 @@
 						<span class="label label-success"></span>
 					</p>
 
-
-
-
 					<div class="panel panel-success">
 						<!-- Default panel contents -->
 						<div class="panel-heading">Réservez maintenant</div>
@@ -41,7 +75,11 @@
 							<p></p>
 						</div>
 
-						<div></div>
+						<div>
+						
+							<div id='calendar'></div>
+						
+						</div>
 					</div>
 
 

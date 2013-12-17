@@ -229,7 +229,7 @@ public class HomeController {
 		    
 		    @RequestMapping(value="/reservation/calendar")
 			public ModelAndView afficheCalendar() {
-		    	ModelAndView modelAndView = new ModelAndView("/Reservations/calendar");
+		    	ModelAndView modelAndView = new ModelAndView("/Reservations/fullcal");
 				return modelAndView;
 			}
 		    
