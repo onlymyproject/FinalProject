@@ -5,14 +5,36 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
-<link type="text/css"
-	href="<%=request.getContextPath() %>/resources/bootstrap/css/bootstrap.css"
-	rel="stylesheet" />
-<link type="text/css"
-	href="<%=request.getContextPath() %>/resources/dist/css/bootstrap.min.css"
-	rel="stylesheet" />
+<link type="text/css" href="<%=request.getContextPath() %>/resources/bootstrap/css/bootstrap.css" rel="stylesheet" />
+<link type="text/css" href="<%=request.getContextPath() %>/resources/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+<script type="text/javascript" src="<%=request.getContextPath() %>/resources/fullcalendar-1.6.4/fullcalendar/fullcalendar.js"></script>
 
 
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+<link rel="stylesheet" href="/resources/demos/style.css" />
+
+  
+    <script type="text/javascript">
+    $(document).ready(function() {            
+        $('#calendar').fullCalendar({
+        	theme: true,
+            editable: false,
+            events: "/CalendarProject/CalendarJsonServlet"
+        });
+    }); 
+    </script>
+    
+     <script>
+$(function() {
+$( "#datepicker" ).datepicker({
+changeMonth: true,
+changeYear: true
+});
+});
+</script>
 
 <title>Insert title here</title>
 </head>
@@ -31,9 +53,6 @@
 						<span class="label label-success"></span>
 					</p>
 
-
-
-
 					<div class="panel panel-success">
 						<!-- Default panel contents -->
 						<div class="panel-heading">Réservez maintenant</div>
@@ -41,7 +60,12 @@
 							<p></p>
 						</div>
 
-						<div></div>
+						<div>
+						
+							<div id="calendar"></div>
+							<p>Date: <input type="text" id="datepicker" /></p>
+						
+						</div>
 					</div>
 
 
