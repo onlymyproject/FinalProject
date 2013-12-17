@@ -17,7 +17,7 @@
 <link rel="stylesheet" href="/resources/demos/style.css" />
 
   
-  
+ 
     <script type="text/javascript">
     $(document).ready(function() {            
         $('#calendar').fullCalendar({
