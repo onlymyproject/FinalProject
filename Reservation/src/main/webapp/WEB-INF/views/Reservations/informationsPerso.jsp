@@ -35,35 +35,7 @@
 						<div class="panel-heading">Tous les champs sont obligatoires</div>
 						<div class="panel-body">
 							<p>
-							 <!-- 
-								<form class="form-horizontal" method="post" action="${pageContext.request.contextPath}/reservation/conformationclient" name="addInfos" id="addInfos">
-									<div class="control-group">
-										<label class="control-label">Prenom</label>
-										<div class="controls">
-											<input type="text" name="prenom" id="prenom" title="prenom" value="daniel" />
-										</div>
-									</div>
-
-									<div class="control-group">
-										<label class="control-label">Nom</label>
-										<div class="controls">
-											<input type="text" name="nom" id="type" title="nom" value="ngenzi" />
-										</div>
-									</div>
-
-									<div class="control-group">
-										<label class="control-label">Adresse mail</label>
-										<div class="controls">
-											<input type="text" name="email" id="email" title="email" value="ngenzid@yahoo.fr" />
-										</div>
-									</div>
-
-									<div class="form-actions">
-										<button type="submit" class="btn btn-success">Submit</button>
-										<button type="button" class="btn btn-danger">Cancel</button>
-									</div>
-								</form>
-							-->
+						
 						 
 					<form:form method="POST" action="${pageContext.request.contextPath}/reservation/conformationclient" modelAttribute="client">
 						<div class="control-group">
@@ -94,7 +66,9 @@
 						
 						<div class="form-actions">
 							<button type="submit" class="btn btn-success">Submit</button>
+							<a href="${pageContext.request.contextPath}">
 							<button type="button" class="btn btn-danger">Cancel</button>
+							</a>
 						</div>
 
 				</form:form>

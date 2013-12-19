@@ -1,8 +1,10 @@
 package Maestro.Reservation.controller;
 
 
+import java.awt.Color;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -31,6 +33,7 @@ import Maestro.Reservation.service.Client;
 import Maestro.Reservation.service.ClientService;
 import Maestro.Reservation.service.Employe;
 import Maestro.Reservation.service.EmployeService;
+import Maestro.Reservation.service.Event;
 import Maestro.Reservation.service.Reservation;
 import Maestro.Reservation.service.ReservationService;
 import Maestro.Reservation.service.Vehicule;
@@ -60,7 +63,7 @@ public class HomeController {
 	@RequestMapping(value="/vehicule/add/process", method = RequestMethod.POST)
 	public ModelAndView addingVehicule(@ModelAttribute("vehicule") Vehicule vehicule, BindingResult result,HttpServletRequest request, HttpServletResponse response) throws Exception{
 		if(result.hasErrors()){
-			String messageEchec = "Attention, il ya eu une erreur de saisie !!";
+			String messageEchec = "Attention, il y a eu une erreur de saisie !!";
 			ModelAndView retour = new ModelAndView("Vehicule/AddVehicule");
 			retour.addObject("messageEchec",messageEchec);
 			return retour;
@@ -229,14 +232,48 @@ public class HomeController {
 		    
 		    @RequestMapping(value="/reservation/calendar")
 			public ModelAndView afficheCalendar() {
-		    	ModelAndView modelAndView = new ModelAndView("/Reservations/calendar");
+		    	reservations = reservationService.getReservations();
+		    	clients = clientService.getClients();
+		    	
+		    	List<Event> events = new ArrayList<Event>();
+		    	
+		    	for(Reservation r : reservations){
+		    	for(Client cl : clients){
+		    			if(cl.getIDReservation() == r.getId()){
+		    				StringBuilder tit = new StringBuilder();
+			    			tit.append("Nom client : ");
+			    			tit.append(cl.getNom());
+			    			tit.append(" -- Véhicule reservé : ");
+			    			tit.append(r.getMarqueVehicule());
+			    			System.out.println(">> title : "+tit.toString());
+			    			Event ev = new Event();
+			    			ev.setTitle(tit.toString());
+			    			ev.setStart(r.getDebut());
+			    			ev.setEnd(r.getRetour());
+			    			int id = cl.getId();
+			    			String url = "/Reservation/clients/show/"+id+"";
+			    			System.out.println(url);
+			    			ev.setUrl(url);
+			    			
+			    			
+			    			
+			    			ev.setCouleur(Color.RED);
+			    			ev.setAllDay(true);
+			    			System.out.println(ev.toString());
+			    			events.add(ev);
+		    			}
+		    	}
+		    	}
+		    	
+		    	ModelAndView modelAndView = new ModelAndView("/Reservations/fullcal");
+		    	modelAndView.addObject("events",events);
 				return modelAndView;
 			}
 		    
 		    @RequestMapping(value="reservation/conformationclient", method=RequestMethod.POST)
 			public ModelAndView donneesClient(@ModelAttribute("client") Client client, BindingResult result,HttpServletRequest request, HttpServletResponse response) throws Exception{
 		    	if(result.hasErrors()){
-					String messageEchec = "Attention, il ya eu une erreur de saisie !!";
+					String messageEchec = "Attention, il y a eu une erreur de saisie !!";
 					ModelAndView retour = new ModelAndView("Reservations/informationsPerso");
 					retour.addObject("messageEchec",messageEchec);
 					return retour;
@@ -286,5 +323,15 @@ public class HomeController {
 				
 				ModelAndView retour = new ModelAndView("redirect:/clients");
 				return retour;
+			}
+			
+			@RequestMapping(value="/clients/show/{id}")
+			public ModelAndView showClient(@PathVariable Integer id){
+				ModelAndView modelAndView = new ModelAndView("/Client/showClient");
+				Client c = clientService.getClient(id);
+				
+				modelAndView.addObject(c);
+				
+				return modelAndView;
 			}
 }

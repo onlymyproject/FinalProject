@@ -9,34 +9,7 @@
 </head>
 <body>
 
-<!-- 
-<jsp:include page="header_reservation.jsp"></jsp:include>
-<div class="container">
-		<div class="row">
 
-
-			<div class="span3">
-				<div class="well">
-					<h2 class="text-warning"></h2>
-					<p>
-						<span class="label label-success">Réservation validée</span>
-					</p>
-
-					<hr>
-
-
-					<hr>
-					<p>
-						<a class="btn btn-success btn-large" href="${pageContext.request.contextPath}"><i
-							class="icon-ok"></i> Retour</a>
-					</p>
-				</div>
-			</div>
-			<jsp:include page="footer_reservation.jsp"></jsp:include>
-		</div>
-	</div>
-	
-	-->
 	
 	<jsp:include page="header_reservation.jsp"></jsp:include>
 
@@ -56,7 +29,7 @@
 
 					<div class="panel panel-success">
 						<!-- Default panel contents -->
-						<div class="panel-heading">Une confirmation a été envoyée par mail</div>
+						<div class="panel-heading">Votre réservation a été enregistré</div>
 						<div class="panel-body">
 							<p>
 								<a class="btn btn-success btn-large" href="${pageContext.request.contextPath}"><i

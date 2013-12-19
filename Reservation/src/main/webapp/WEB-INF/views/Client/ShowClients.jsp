@@ -62,7 +62,7 @@
 
 												<td>
 													<a href="${pageContext.request.contextPath}/client/reservation/check/${client.IDReservation}">Voir réservation</a><br>
-													<a href="${pageContext.request.contextPath}/client/delete/${client.id}"onclick="return confirm('Voulez vous vraiment soupprimr ce client?')">Delete</a><br></td>
+													<a href="${pageContext.request.contextPath}/client/delete/${client.id}"onclick="return confirm('Voulez vous vraiment soupprimr ce client?')">Supprimer</a><br></td>
 											</tr>
 										</c:forEach>
 

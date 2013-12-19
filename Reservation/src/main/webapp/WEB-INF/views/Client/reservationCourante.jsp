@@ -63,7 +63,8 @@
 												<td>${reservationCourante.nbrehausseur}</td>
 												<td>${reservationCourante.nbsiegeenfant}</td>
 												<td>
-													<a href="${pageContext.request.contextPath}/clients">retour </a>
+													<a href="${pageContext.request.contextPath}/reservation/calendar">Retour sur l'agenda </a><br />
+													<a href="${pageContext.request.contextPath}/clients">Tous les clients </a>
 												</td>
 
 												

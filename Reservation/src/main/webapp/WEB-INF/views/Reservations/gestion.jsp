@@ -118,8 +118,7 @@ $( "#from" ).datepicker( "option", "maxDate", selectedDate );
 
 										<div class="form-actions">
 											<button type="submit" class="btn btn-success"
-												onclick="return confirm('Voulez vous vraiment valider cette réservation ?')">Appeler
-												pour réserver</button>
+												onclick="return confirm('Voulez vous vraiment valider cette réservation ?')">Réserver maintenant</button>
 											<button type="button" class="btn btn-success"
 												onclick="return confirm('Voulez vous vraiment valider cette réservation ?')">Payer
 												Maintenant</button>

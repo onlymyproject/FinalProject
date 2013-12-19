@@ -71,8 +71,8 @@
 												<td>${vehicule.annee}</td>
 
 												<td>
-												<a href="${pageContext.request.contextPath}/vehicule/edit/${vehicule.id}">Edit</a><br>
-												<a href="${pageContext.request.contextPath}/vehicule/delete/${vehicule.id}"	onclick="return confirm('Voulez vous vraiment soupprimr ce vehicule ${vehicule.marque}?')">Delete</a><br></td>
+												<a href="${pageContext.request.contextPath}/vehicule/edit/${vehicule.id}">Editer</a><br>
+												<a href="${pageContext.request.contextPath}/vehicule/delete/${vehicule.id}"	onclick="return confirm('Voulez vous vraiment soupprimer ce vehicule ${vehicule.marque}?')">Supprimer</a><br></td>
 											</tr>
 										</c:forEach>
 

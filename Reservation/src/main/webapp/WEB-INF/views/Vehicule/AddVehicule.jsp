@@ -53,7 +53,7 @@
 						</div>
 
 						<div class="control-group">
-							<label class="control-label">Carbulant</label>
+							<label class="control-label">Carburant</label>
 							<div class="controls">
 								<input type="text" name="carbulant" id="carbulant"
 									title="carbulant" value="">
