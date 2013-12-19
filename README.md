@@ -12,6 +12,7 @@ The application manages three functionalities:
 Vehicle management, employee management and reservation management.
 
 Project undertaken with the Spring MVC framework using hibernate for data persistence and Twitter Bootstrap for better appearance in the graphical user interface (the resources required for the use of Bootstrap have been included in the project, so it is not necessary to add anything).
+
 If you have not yet installed the Git plugin for Eclipse, make the whole process recommended below, otherwise, start the process in step 2.
 
 1. Go to Menu Help --> Install New Software --> Work with: All sites available --> git (take all collaboration), Install and start Eclipse
