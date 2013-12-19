@@ -7,7 +7,8 @@ Performed by students from the UHA of Mulhouse
 Daniel NGENZI and George CARDENAS 
 
 This web application allows online booking of a vehicle.
-This application manages three functionalities:
+
+The application manages three functionalities:
 Vehicle management, employee management and reservation management.
 
 Project undertaken with the Spring MVC framework using hibernate for data persistence and Twitter Bootstrap for better appearance in the graphical user interface (the resources required for the use of Bootstrap have been included in the project, so it is not necessary to add anything).
